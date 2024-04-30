@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct PriorityColorPicker: View {
+    @Binding var selectedColor: SelectColor
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("색깔 선택 하기 ")
+                .font(.callout)
+            HStack {
+                ForEach(SelectColor.allCases, id: \.self) { taskColor in
+                    Button {
+                        selectedColor = taskColor
+                    } label: {
+                        Image(systemName: selectedColor == taskColor ? "circle.circle.fill" : "circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 28, height: 28)
+                    }
+                    .buttonStyle(.borderless)
+                    .foregroundColor(taskColor.representable)
+                    .frame(maxWidth: .infinity)
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    PriorityColorPicker()
+    PriorityColorPicker(selectedColor: .constant(.red))
 }
