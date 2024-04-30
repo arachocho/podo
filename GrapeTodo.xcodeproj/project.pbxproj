@@ -14,6 +14,7 @@
 		F4B0B0DA2BE082DA00C11D36 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B0B0D92BE082DA00C11D36 /* Todo.swift */; };
 		F4B0B0DC2BE0832900C11D36 /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B0B0DB2BE0832900C11D36 /* TodoDetailView.swift */; };
 		F4B0B0DE2BE0838D00C11D36 /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B0B0DD2BE0838D00C11D36 /* StatusIndicator.swift */; };
+		F4B0B0E02BE086A100C11D36 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B0B0DF2BE086A100C11D36 /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		F4B0B0D92BE082DA00C11D36 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		F4B0B0DB2BE0832900C11D36 /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
 		F4B0B0DD2BE0838D00C11D36 /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
+		F4B0B0DF2BE086A100C11D36 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				F406E4FC2BDF261D00C6CF56 /* ContentView.swift */,
+				F4B0B0DF2BE086A100C11D36 /* AddView.swift */,
 				F4B0B0DB2BE0832900C11D36 /* TodoDetailView.swift */,
 				F4B0B0DD2BE0838D00C11D36 /* StatusIndicator.swift */,
 			);
@@ -164,6 +167,7 @@
 			files = (
 				F4B0B0DE2BE0838D00C11D36 /* StatusIndicator.swift in Sources */,
 				F406E4FD2BDF261D00C6CF56 /* ContentView.swift in Sources */,
+				F4B0B0E02BE086A100C11D36 /* AddView.swift in Sources */,
 				F4B0B0DA2BE082DA00C11D36 /* Todo.swift in Sources */,
 				F406E4FB2BDF261D00C6CF56 /* GrapeTodoApp.swift in Sources */,
 				F4B0B0DC2BE0832900C11D36 /* TodoDetailView.swift in Sources */,

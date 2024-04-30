@@ -17,7 +17,8 @@ struct TodoDetailView: View {
                 Text(formatDate(todo.date))
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                StatusIndicator(status: todo.status)
+//                StatusIndicator(status: todo.status)
+                StatusIndicator(priority: todo.priority)
             }
             .padding()
             .navigationTitle("Todo Details")

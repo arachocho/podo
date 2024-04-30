@@ -7,20 +7,25 @@
 
 import SwiftUI
 
+
 struct StatusIndicator: View {
-    var status: TodoStatus
+    var priority: Priority
 
     var body: some View {
         let backgroundColor: Color = {
-                        switch status {
-                        case .completed:
+                        switch priority {
+                        case .routine:
                             return Color.green
-                        case .pending:
-                            return Color.orange
+                        case .high:
+                            return Color.red
+                        case .medium:
+                            return Color.blue
+                        case .low:
+                            return Color.gray
                         }
                     }()
 
-        Text(status == .completed ? "Completed" : "Pending")
+        Text("\(priority)")
             .font(.footnote)
             .foregroundColor(.white)
             .padding(8)
