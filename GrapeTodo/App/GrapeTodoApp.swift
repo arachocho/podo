@@ -13,5 +13,6 @@ struct GrapeTodoApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Todo.self)
     }
 }
