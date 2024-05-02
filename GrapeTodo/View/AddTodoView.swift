@@ -22,9 +22,19 @@ struct AddTodoView: View {
     @State
     private var todoColor = SelectColor.red
     
+    @State
+    private var selectedPriority: Priority = .routine
+    
     var body: some View {
         NavigationView {
             VStack {
+                Picker(selection: $selectedPriority, label: Text("우선순위 선택")) {
+                              ForEach(Priority.allCases) { priority in
+                                  Text(priority.description).tag(priority)
+                              }
+                          }
+                          .pickerStyle(SegmentedPickerStyle())
+                          .padding()
                 Form {
                     Section {
                         TextField("할일 내용 적기", text: $todoName)
@@ -60,7 +70,8 @@ struct AddTodoView: View {
         
         let newTodo = Todo(
             content: todoName,
-            color: todoColor
+            color: todoColor,
+            priority: selectedPriority
         )
         context.insert(newTodo)
         

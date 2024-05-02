@@ -35,6 +35,8 @@ struct TodoView: View {
                 Text(todo.content)
                     .foregroundColor(todo.completed ? .secondary : .primary)
                 Spacer()
+                Text("\(todo.priority)")
+                Spacer()
                 Button(action: {showingTodoDetail = true}) {
                     Image(systemName: "greaterthan")
                         .foregroundColor(todoColor.representable)

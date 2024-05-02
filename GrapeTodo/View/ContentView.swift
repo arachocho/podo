@@ -12,8 +12,9 @@ struct ContentView: View {
     @Environment(\.modelContext)
     private var context
     
-    @Query(sort: \Todo.createdAt, animation: .smooth)
+    @Query(sort:[SortDescriptor(\Todo.priority), SortDescriptor(\Todo.createdAt)], animation: .smooth)
     private var todos: [Todo]
+    //@Query private var sortedItems = Item.all().sorted(by: \.priority.sortOrder)
     
     @State
     var showingAddTodo = false
@@ -36,7 +37,7 @@ struct ContentView: View {
                         }
                         .overlay {
                             if todos.isEmpty {
-                                EmptyView.background(Color.red)
+                                EmptyView
                             }
                         }
                         .frame(height: geo.size.height * (2/3))
