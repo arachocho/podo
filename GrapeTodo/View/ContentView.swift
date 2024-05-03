@@ -76,9 +76,9 @@ struct ContentView: View {
     @ViewBuilder
     private var EmptyView: some View {
         ContentUnavailableView {
-            Label("아직 할일이 없으시네요", systemImage: "text.badge.plus")
+            Label("아직 할 일이 없으시네요", systemImage: "text.badge.plus")
         } description: {
-            Text("새 할일을 추가 하시면 할일들 보여질 거에요 ")
+            Text("새 할 일을 추가 하시면 할 일들이 보여질 거에요 ")
         }
     }
     

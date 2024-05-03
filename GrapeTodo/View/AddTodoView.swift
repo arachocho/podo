@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct AddTodoView: View {
     
@@ -20,6 +19,9 @@ struct AddTodoView: View {
     private var todoName: String = ""
     
     @State
+    private var todoContent: String = ""
+    
+    @State
     private var todoColor = SelectColor.red
     
     @State
@@ -29,16 +31,23 @@ struct AddTodoView: View {
         NavigationView {
             VStack {
                 Picker(selection: $selectedPriority, label: Text("우선순위 선택")) {
-                              ForEach(Priority.allCases) { priority in
-                                  Text(priority.description).tag(priority)
-                              }
-                          }
-                          .pickerStyle(SegmentedPickerStyle())
-                          .padding()
+                    ForEach(Priority.allCases) { priority in
+                        Text(priority.description).tag(priority)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
                 Form {
                     Section {
-                        TextField("할일 내용 적기", text: $todoName)
-                        PriorityColorPicker(selectedColor: $todoColor)
+                        TextField("해야할 일", text: $todoName)
+                        
+//                        PriorityColorPicker(selectedColor: $todoColor)
+                        
+                        TextEditor(text: $todoContent)
+                            .lineLimit(3...5)
+                            .frame(height: 200)
+                        // 텍스트 에디터 안에 "내용"을 넣고 싶어요
                     }
                 }
             }
@@ -62,6 +71,7 @@ struct AddTodoView: View {
                 }
             }
             .tint(.orange)
+            
         }
     }
     
@@ -69,10 +79,14 @@ struct AddTodoView: View {
         guard todoName.isEmpty == false else { return }
         
         let newTodo = Todo(
-            content: todoName,
+            title: todoName,
+            content: todoContent,
             color: todoColor,
             priority: selectedPriority
+            
         )
+        print(newTodo)
+        
         context.insert(newTodo)
         
         do {
@@ -87,4 +101,6 @@ struct AddTodoView: View {
 
 #Preview {
     AddTodoView()
+        .modelContainer(for: Todo.self)
 }
+

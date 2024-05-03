@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
+
 struct GrapeTodoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            .modelContainer(for: Todo.self)
         }
-        .modelContainer(for: Todo.self)
     }
 }

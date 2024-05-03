@@ -32,7 +32,7 @@ struct TodoView: View {
                     Image(systemName: todo.completed ? "checkmark.circle.fill" : "circle")
                         .foregroundColor(todoColor.representable)
                 }.buttonStyle(.borderless)
-                Text(todo.content)
+                Text(todo.title)
                     .foregroundColor(todo.completed ? .secondary : .primary)
                 Spacer()
                 Text("\(todo.priority)")
