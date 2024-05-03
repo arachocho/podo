@@ -30,10 +30,23 @@ struct AddTodoView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Picker(selection: $selectedPriority, label: Text("우선순위 선택")) {
-                    ForEach(Priority.allCases) { priority in
-                        Text(priority.description).tag(priority)
-                    }
+//                Picker(selection: $selectedPriority, label: Text("우선순위 선택")) {
+//                    ForEach(Priority.allCases) { priority in
+//                        Text(priority.description).tag(priority)
+//                    }
+                
+//                struct MenuButtonView: View {
+//                    var body: some View {
+//                        ZStack {
+//                            Menu("Choose a priority") {
+//                                Button("Low") { print("Select Low”) }
+//                                Button("High") { print("Select High") }
+//                                Button("Routine") { print("Select Routine") }
+//                            }
+//                        }.foregroundColor(.black)
+//                    }
+//                }
+                
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
